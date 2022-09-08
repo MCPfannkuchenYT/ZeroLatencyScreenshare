@@ -35,24 +35,6 @@ DWORD WINAPI ScreenGrabber(void* data) {
         send(sock, imageData, WIDTH*HEIGHT*3, 0);
     }
 
-    /*WSADATA wsa;
-    WSAStartup(MAKEWORD(2,2),&wsa);
-
-    SOCKET s, client;
-    struct sockaddr_in server, cc;
-
-    s = socket(AF_INET, SOCK_STREAM, 0);
-    server.sin_family = AF_INET;
-    server.sin_addr.s_addr = INADDR_ANY;
-    server.sin_port = htons(8888);
-
-    bind(s, (struct sockaddr *)&server, sizeof(server));
-    setsockopt(s, SOL_SOCKET, TCP_NODELAY, 1, 1);
-    listen(s, 3);
-    int c = sizeof(struct sockaddr_in);
-    client = accept(s, (struct sockaddr *)&cc, &c);
-    setsockopt(client, SOL_SOCKET, TCP_NODELAY, 1, 1);*/
-
     // Deinit gdi
     ReleaseDC(NULL, hdc);
     DeleteObject(hbDesktop);
